@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="..\..\Directory.NuGet.props" />
+	<PropertyGroup>
+		<ParentDirectoryBuildProps>$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))</ParentDirectoryBuildProps>
+	</PropertyGroup>
+	<Import Project="$(ParentDirectoryBuildProps)" Condition="'$(ParentDirectoryBuildProps)'!=''" />
+</Project>

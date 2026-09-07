@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TargetFrameworks>net45;net6.0-windows;net8.0-windows;net10.0-windows</TargetFrameworks>
+        <PackageId>MetroFramework</PackageId>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>../../MetroFramework.snk</AssemblyOriginatorKeyFile>
+        <UseWindowsForms>true</UseWindowsForms>
+	    <LangVersion>latest</LangVersion>
+	    <IncludeBuildOutput>false</IncludeBuildOutput>
+	    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	    <RepositoryUrl>https://github.com/thielj/MetroFramework/MetroFramework.git</RepositoryUrl>
+	    <RepositoryType>git</RepositoryType>
+    </PropertyGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\MetroFramework.Design\MetroFramework.Design.csproj" />
+        <ProjectReference Include="..\MetroFramework.Fonts\MetroFramework.Fonts.csproj" />
+        <ProjectReference Include="..\MetroFramework.Library\MetroFramework.Library.csproj" />
+    </ItemGroup>
+    <PropertyGroup>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Remove="README.md" />
+        <Content Include="README.md" Link="README.md" Pack="true" PackagePath="\README.md" />
+        <Content Include="$(SolutionDir)License.txt" Link="License.txt" Pack="true" PackagePath="\License.txt" Condition="Exists('$(SolutionDir)License.txt')" />
+    </ItemGroup>
+</Project>

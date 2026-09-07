@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+        <TargetFrameworks>net45;net6.0-windows;net8.0-windows;net10.0-windows</TargetFrameworks>
+        <PackageId>$(MSBuildProjectName)</PackageId>
+        <PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>../../MetroFramework.snk</AssemblyOriginatorKeyFile>
+        <UseWindowsForms>true</UseWindowsForms>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <RepositoryUrl>https://github.com/thielj/MetroFramework/MetroFramework.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net45" Condition="'$(TargetFramework)'=='net45'" Version="1.0.3" />
+        <PackageReference Include="Microsoft.SourceLink.Bitbucket.Git" IncludeAssets="runtime; build; native; contentfiles; analyzers" PrivateAssets="all" Version="8.0.0" />
+        <PackageReference Include="Net4x.NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="System.Design" Condition="'$(TargetFramework)'=='net45'" />
+        <Reference Include="System.Windows.Forms" Condition="'$(TargetFramework)'=='net45'" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\MetroFramework.Library\MetroFramework.Library.csproj" />
+    </ItemGroup>
+    <PropertyGroup>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="README.md" Link="README.md" Pack="true" PackagePath="\README.md" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+        <TargetFrameworks>net45;net6.0-windows;net8.0-windows;net10.0-windows</TargetFrameworks>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>../../MetroFramework.snk</AssemblyOriginatorKeyFile>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+        <UseWindowsForms>true</UseWindowsForms>
+        <PackageId>MetroFramework.Runtime</PackageId>
+        <PackageOutputPath>$(SolutionDir)Packages\</PackageOutputPath>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <RepositoryUrl>https://github.com/thielj/MetroFramework/MetroFramework.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System.Windows.Forms" Condition="'$(TargetFramework)'=='net45'" />
+        <Reference Include="System.XML" Condition="'$(TargetFramework)'=='net45'" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net45" Condition="'$(TargetFramework)'=='net45'" Version="1.0.3" />
+        <PackageReference Include="Microsoft.SourceLink.Bitbucket.Git" IncludeAssets="runtime; build; native; contentfiles; analyzers" PrivateAssets="all" Version="8.0.0" />
+        <PackageReference Include="Net4x.NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="Components\MetroStyleExtender.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Components\MetroStyleManager.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Components\MetroToolTip.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroButton.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroCheckBox.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroComboBox.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroLabel.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroLink.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroPanel.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroProgressBar.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroProgressSpinner.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroRadioButton.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroScrollBar.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroTabPage.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroTextBox.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroTile.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroToggle.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroTrackBar.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Controls\MetroUserControl.cs">
+            <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Update="Drawing\Html\HtmlLabel.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Drawing\Html\HtmlPanel.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Drawing\Html\HtmlToolTip.cs">
+            <SubType>Component</SubType>
+        </Compile>
+        <Compile Update="Forms\MetroMessageBox.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Update="Forms\MetroForm.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Update="Forms\MetroTaskWindow.cs">
+            <SubType>Form</SubType>
+        </Compile>
+        <Compile Update="Properties\Resources.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTime>True</DesignTime>
+            <DependentUpon>Resources.resx</DependentUpon>
+        </Compile>
+        <Compile Update="Properties\Settings.Designer.cs">
+            <AutoGen>True</AutoGen>
+            <DesignTimeSharedInput>True</DesignTimeSharedInput>
+            <DependentUpon>Settings.settings</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Properties\Settings.settings">
+            <Generator>SettingsSingleFileGenerator</Generator>
+            <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Include="Localization\de\MetroToggle.xml" />
+        <EmbeddedResource Update="Properties\Resources.it-it.resx">
+            <DependentUpon>Resources.resx</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Localization\en\MetroToggle.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Remove="Controls\MetroTilePart.cs" />
+    </ItemGroup>
+    <PropertyGroup>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+        <None Include="README.md" Link="README.md" Pack="true" PackagePath="\README.md" />
+    </ItemGroup>
+</Project>

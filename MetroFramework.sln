@@ -1,24 +1,40 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework", "MetroFramework\MetroFramework.csproj", "{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}"
+# Visual Studio Version 18
+VisualStudioVersion = 18.7.11919.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroFramework.Library", "Sources\MetroFramework.Library\MetroFramework.Library.csproj", "{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework.Demo", "MetroFramework.Demo\MetroFramework.Demo.csproj", "{AF988819-4618-4852-9506-C1D06D04F6B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework.Demo", "Tests\MetroFramework.Demo\MetroFramework.Demo.csproj", "{AF988819-4618-4852-9506-C1D06D04F6B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9579AFCE-35B4-431F-9DC3-F85E4294D40C}"
 	ProjectSection(SolutionItems) = preProject
-		build.cmd = build.cmd
+		.gitignore = .gitignore
 		CHANGELOG.md = CHANGELOG.md
+		Directory.Build.props = Directory.Build.props
+		Directory.NuGet.props = Directory.NuGet.props
 		LICENSE.md = LICENSE.md
 		MetroFramework.Public.snk = MetroFramework.Public.snk
 		MetroFramework.snk = MetroFramework.snk
+		Nuget.Config = Nuget.Config
 		README.md = README.md
-		Themes.txt = Themes.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework.Design", "MetroFramework.Design\MetroFramework.Design.csproj", "{7316584D-9A16-4280-A8AB-6D45198C6E4D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetroFramework.Design", "Sources\MetroFramework.Design\MetroFramework.Design.csproj", "{7316584D-9A16-4280-A8AB-6D45198C6E4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework.Fonts", "MetroFramework.Fonts\MetroFramework.Fonts.csproj", "{5A2FCAE8-C2FA-41BD-90EA-16103EA07B26}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework.Fonts", "Sources\MetroFramework.Fonts\MetroFramework.Fonts.csproj", "{5A2FCAE8-C2FA-41BD-90EA-16103EA07B26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A8039EB2-5AF6-4B96-A07D-C7F7ADB138F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework.Tests", "Tests\MetroFramework.Tests\MetroFramework.Tests.csproj", "{20386B12-8135-43B3-82E4-85A6E04E333F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PoC", "PoC", "{530A3EFF-988D-4B61-99FF-818F6464351C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework.Design.Tests", "Tests\MetroFramework.Design.Tests\MetroFramework.Design.Tests.csproj", "{5F8D0AF0-8323-45A5-9475-B6FE037F1C71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework.Fonts.Tests", "Tests\MetroFramework.Fonts.Tests\MetroFramework.Fonts.Tests.csproj", "{5D433DB6-6F8F-4047-96C5-FB35EE0DFBB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetroFramework", "Sources\MetroFramework\MetroFramework.csproj", "{407715B8-93FC-493B-BBDD-56FA4174050D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,24 +46,46 @@ Global
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BB41AC8B-CBED-4387-A7E0-4567EDB3F57F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{AF988819-4618-4852-9506-C1D06D04F6B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AF988819-4618-4852-9506-C1D06D04F6B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF988819-4618-4852-9506-C1D06D04F6B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF988819-4618-4852-9506-C1D06D04F6B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF988819-4618-4852-9506-C1D06D04F6B2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{7316584D-9A16-4280-A8AB-6D45198C6E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7316584D-9A16-4280-A8AB-6D45198C6E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7316584D-9A16-4280-A8AB-6D45198C6E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7316584D-9A16-4280-A8AB-6D45198C6E4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7316584D-9A16-4280-A8AB-6D45198C6E4D}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{5A2FCAE8-C2FA-41BD-90EA-16103EA07B26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5A2FCAE8-C2FA-41BD-90EA-16103EA07B26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A2FCAE8-C2FA-41BD-90EA-16103EA07B26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A2FCAE8-C2FA-41BD-90EA-16103EA07B26}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A2FCAE8-C2FA-41BD-90EA-16103EA07B26}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{20386B12-8135-43B3-82E4-85A6E04E333F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20386B12-8135-43B3-82E4-85A6E04E333F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20386B12-8135-43B3-82E4-85A6E04E333F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20386B12-8135-43B3-82E4-85A6E04E333F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F8D0AF0-8323-45A5-9475-B6FE037F1C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F8D0AF0-8323-45A5-9475-B6FE037F1C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F8D0AF0-8323-45A5-9475-B6FE037F1C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F8D0AF0-8323-45A5-9475-B6FE037F1C71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D433DB6-6F8F-4047-96C5-FB35EE0DFBB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D433DB6-6F8F-4047-96C5-FB35EE0DFBB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D433DB6-6F8F-4047-96C5-FB35EE0DFBB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D433DB6-6F8F-4047-96C5-FB35EE0DFBB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407715B8-93FC-493B-BBDD-56FA4174050D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407715B8-93FC-493B-BBDD-56FA4174050D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407715B8-93FC-493B-BBDD-56FA4174050D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407715B8-93FC-493B-BBDD-56FA4174050D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AF988819-4618-4852-9506-C1D06D04F6B2} = {530A3EFF-988D-4B61-99FF-818F6464351C}
+		{20386B12-8135-43B3-82E4-85A6E04E333F} = {A8039EB2-5AF6-4B96-A07D-C7F7ADB138F8}
+		{530A3EFF-988D-4B61-99FF-818F6464351C} = {A8039EB2-5AF6-4B96-A07D-C7F7ADB138F8}
+		{5F8D0AF0-8323-45A5-9475-B6FE037F1C71} = {A8039EB2-5AF6-4B96-A07D-C7F7ADB138F8}
+		{5D433DB6-6F8F-4047-96C5-FB35EE0DFBB6} = {A8039EB2-5AF6-4B96-A07D-C7F7ADB138F8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B5FBFEF-A462-4F85-AB57-B03DEC3512F1}
 	EndGlobalSection
 EndGlobal

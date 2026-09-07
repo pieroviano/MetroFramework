@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFrameworks>net45;net8.0-windows</TargetFrameworks>
+		<AssemblyTitle>MetroFramework.Demo</AssemblyTitle>
+		<Company>Microsoft</Company>
+		<Product>MetroFramework.Demo</Product>
+		<Copyright>Copyright (c) Microsoft 2011</Copyright>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="System.Windows.Forms" Condition="'$(TargetFramework)'=='net45'" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="MainForm.cs">
+			<SubType>Form</SubType>
+		</Compile>
+		<Compile Update="MainForm.Designer.cs">
+			<DependentUpon>MainForm.cs</DependentUpon>
+		</Compile>
+		<Compile Update="TaskWindowControl.cs">
+			<SubType>UserControl</SubType>
+		</Compile>
+		<Compile Update="TaskWindowControl.Designer.cs">
+			<DependentUpon>TaskWindowControl.cs</DependentUpon>
+		</Compile>
+		<EmbeddedResource Update="MainForm.resx">
+			<DependentUpon>MainForm.cs</DependentUpon>
+		</EmbeddedResource>
+		<EmbeddedResource Update="TaskWindowControl.resx">
+			<DependentUpon>TaskWindowControl.cs</DependentUpon>
+		</EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\Sources\MetroFramework.Design\MetroFramework.Design.csproj" />
+		<ProjectReference Include="..\..\Sources\MetroFramework.Fonts\MetroFramework.Fonts.csproj" />
+		<ProjectReference Include="..\..\Sources\MetroFramework.Library\MetroFramework.Library.csproj" />
+	</ItemGroup>
+</Project>
